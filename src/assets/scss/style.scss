@@ -7,3 +7,9 @@ body {
 .btn-rounded {
   border-radius: 2rem;
 }
+
+.card-header,
+.card-footer {
+  border: unset;
+  background: unset;
+}
