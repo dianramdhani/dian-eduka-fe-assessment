@@ -1,5 +1,5 @@
 <template>
-  <div class="card question">
+  <div class="card question mb-4">
     <div class="question__header">
       TPS-Penalaran Umum
       <span class="question__navigator">

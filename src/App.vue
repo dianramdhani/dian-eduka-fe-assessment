@@ -2,10 +2,10 @@
   <navbar />
   <main class="container">
     <div class="row my-4">
-      <div class="col-lg-8">
+      <div class="col-lg-9">
         <question />
       </div>
-      <div class="col-lg d-grid gap-4">
+      <div class="col-md d-grid gap-4">
         <time-remaining />
         <question-history />
         <button class="btn btn-lg btn-primary btn-rounded">Finish</button>
