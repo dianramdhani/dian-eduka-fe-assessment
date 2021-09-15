@@ -1,15 +1,8 @@
 @import "custom";
+@import "color";
+@import "components/card";
+@import "components/time-remaining";
 
 body {
   background-color: #f5f7f9;
-}
-
-.btn-rounded {
-  border-radius: 2rem;
-}
-
-.card-header,
-.card-footer {
-  border: unset;
-  background: unset;
 }

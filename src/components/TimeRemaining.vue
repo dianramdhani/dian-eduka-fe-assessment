@@ -1,40 +1,12 @@
 <template>
-  <div class="card">
-    <h3 class="card-header mb-0 text-center">Sisa Waktu Sesi</h3>
-    <div class="card-body">
-      <div class="row">
-        <div class="col">
-          <div
-            class="
-              card card-body
-              d-flex
-              align-items-center
-              justify-content-center
-              bg-primary
-            "
-          >
-            <h2>02</h2>
-            Menit
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="
-              card card-body
-              d-flex
-              align-items-center
-              justify-content-center
-              bg-primary
-            "
-          >
-            <h2>00</h2>
-            Detik
-          </div>
-        </div>
-      </div>
-      <p class="text-center mb-0">
-        Sisa Waktu Tryout <strong>03:29:09</strong>
-      </p>
+  <div class="card time-remaining">
+    <h3 class="time-remaining__title">Sisa Waktu Sesi</h3>
+    <div class="time-remaining__time">
+      <div>02 <span>Menit</span></div>
+      <div>00 <span>Detik</span></div>
+    </div>
+    <div class="time-remaining__remainder">
+      Sisa Waktu Tryout <span>03:29:09</span>
     </div>
   </div>
 </template>

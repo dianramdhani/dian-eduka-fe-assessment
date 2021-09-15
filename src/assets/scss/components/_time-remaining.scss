@@ -1,0 +1,45 @@
+.time-remaining {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  &__title {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  &__time {
+    font-size: 1.625rem;
+    font-weight: bold;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+
+    div {
+      padding: 0.75rem 1.5rem;
+      background-color: $primary;
+      line-height: 2rem;
+      border-radius: 1rem;
+
+      span {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1rem;
+      }
+    }
+  }
+
+  &__remainder {
+    font-size: 1rem;
+    color: #838383;
+
+    span {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+}

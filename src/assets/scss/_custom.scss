@@ -1,3 +1,11 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-$primary: #d8813c;
+.btn-rounded {
+  border-radius: 2rem;
+}
+
+.card-header,
+.card-footer {
+  border: unset;
+  background: unset;
+}
