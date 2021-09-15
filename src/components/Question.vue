@@ -52,7 +52,7 @@
       </li>
     </ul>
     <div class="question__footer">
-      test
+      <button class="btn btn-outline-primary btn-rounded">Hapus Jawaban</button>
       <span class="question__navigator">
         <button>
           <i class="fas fa-chevron-left"></i>
