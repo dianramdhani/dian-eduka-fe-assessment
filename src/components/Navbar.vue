@@ -83,3 +83,13 @@ export default {
   name: 'Navbar',
 };
 </script>
+
+<style lang="scss" scoped>
+.dropdown-toggle {
+  color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.7);
+  }
+}
+</style>
