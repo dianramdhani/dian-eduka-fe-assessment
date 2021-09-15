@@ -1,0 +1,41 @@
+.btn {
+  padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $primary;
+    background-color: transparent;
+    border-color: $primary;
+  }
+
+  &:focus,
+  &:active,
+  &:focus:active {
+    box-shadow: 0 0 0 0.25rem rgb(229 121 46 / 50%);
+  }
+}
+
+.btn-outline-primary {
+  border-color: $primary;
+  color: $primary;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
+  }
+
+  &:focus,
+  &:active,
+  &:focus:active {
+    box-shadow: 0 0 0 0.25rem rgb(229 121 46 / 50%);
+  }
+}
