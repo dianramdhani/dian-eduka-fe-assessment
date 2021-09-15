@@ -1,101 +1,67 @@
 <template>
-  <div class="card">
-    <div class="card-header">
-      <div class="d-flex align-items-center justify-content-between">
-        TPS - Penalaran Umum
-        <span class="d-flex align-items-center">
-          <button type="button" class="btn btn-outline-primary btn-rounded">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          1
-          <button type="button" class="btn btn-outline-primary btn-rounded">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </span>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="card card-body">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-        consequuntur reiciendis id numquam, qui beatae autem earum harum itaque
-        ipsa totam doloribus voluptatum quibusdam expedita fugit animi error,
-        ratione dolore!
-      </div>
-      <div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="optionA"
-          />
-          <label class="form-check-label" for="optionA"> Default radio </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="optionB"
-            checked
-          />
-          <label class="form-check-label" for="optionB">
-            Default checked radio
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="optionC"
-            checked
-          />
-          <label class="form-check-label" for="optionC">
-            Default checked radio
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="optionD"
-            checked
-          />
-          <label class="form-check-label" for="optionD">
-            Default checked radio
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="flexRadioDefault"
-            id="optionE"
-            checked
-          />
-          <label class="form-check-label" for="optionE">
-            Default checked radio
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <div class="d-flex align-items-center justify-content-between">
-        <button type="button" class="btn btn-outline-primary btn-rounded">
-          Hapus Jawaban
+  <div class="card question">
+    <div class="question__header">
+      TPS-Penalaran Umum
+      <span class="question__navigator">
+        <button>
+          <i class="fas fa-chevron-left"></i>
         </button>
-        <span class="d-flex align-items-center">
-          <button type="button" class="btn btn-outline-primary btn-rounded">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          1
-          <button type="button" class="btn btn-outline-primary btn-rounded">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </span>
-      </div>
+        1
+        <button>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </span>
+    </div>
+    <div class="card">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, soluta
+      pariatur nemo temporibus voluptas hic veniam, quibusdam magni voluptate
+      alias ducimus adipisci est inventore illum praesentium blanditiis aperiam
+      error quisquam?
+    </div>
+    <p class="question__text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, soluta
+    </p>
+    <ul class="question__options">
+      <li>
+        <span>A</span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
+        praesentium beatae officiis ipsum facere perspiciatis sequi numquam cum
+        voluptatum aliquam blanditiis ut assumenda veniam amet deserunt,
+        molestias quo necessitatibus.
+      </li>
+      <li>
+        <span>B</span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
+        praesentium beatae officiis ipsum facere perspiciatis sequi numquam cum
+        voluptatum aliquam blanditiis ut assumenda veniam amet deserunt,
+        molestias quo necessitatibus.
+      </li>
+      <li>
+        <span>C</span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
+        praesentium beatae officiis ipsum facere perspiciatis sequi numquam cum
+        voluptatum aliquam blanditiis ut assumenda veniam amet deserunt,
+        molestias quo necessitatibus.
+      </li>
+      <li>
+        <span>D</span>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
+        praesentium beatae officiis ipsum facere perspiciatis sequi numquam cum
+        voluptatum aliquam blanditiis ut assumenda veniam amet deserunt,
+        molestias quo necessitatibus.
+      </li>
+    </ul>
+    <div class="question__footer">
+      test
+      <span class="question__navigator">
+        <button>
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        1
+        <button>
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </span>
     </div>
   </div>
 </template>
@@ -105,6 +71,3 @@ export default {
   name: 'Question',
 };
 </script>
-
-<style lang="scss" scoped>
-</style>
