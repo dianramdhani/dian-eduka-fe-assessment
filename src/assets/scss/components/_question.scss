@@ -83,7 +83,7 @@
     }
   }
 
-  &__option--active:before {
+  &__option--active span {
     background-color: $primary;
     color: $white;
   }

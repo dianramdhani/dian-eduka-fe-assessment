@@ -32,12 +32,13 @@
       }
     }
   }
-
+  
   &__remainder {
     font-size: 1rem;
     color: #838383;
-
+    
     span {
+      margin-left: 0.625rem;
       color: #000;
       font-weight: bold;
     }

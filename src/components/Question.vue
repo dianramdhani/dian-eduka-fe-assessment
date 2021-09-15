@@ -29,7 +29,7 @@
         voluptatum aliquam blanditiis ut assumenda veniam amet deserunt,
         molestias quo necessitatibus.
       </li>
-      <li>
+      <li class="question__option--active">
         <span>B</span>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat quod
         praesentium beatae officiis ipsum facere perspiciatis sequi numquam cum
