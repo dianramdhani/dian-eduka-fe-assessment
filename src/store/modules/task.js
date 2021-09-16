@@ -1,17 +1,104 @@
 const state = () => {
     return {
-        questions: [],
+        questions: [
+            {
+                type: 'type soal',
+                text: 'ini text 1',
+                question: 'question 1',
+                options: [
+                    {
+                        option: 'A',
+                        text: 'ini option a'
+                    },
+                    {
+                        option: 'B',
+                        text: 'ini option b'
+                    },
+                    {
+                        option: 'C',
+                        text: 'ini option c'
+                    },
+                    {
+                        option: 'D',
+                        text: 'ini option d'
+                    },
+                    {
+                        option: 'E',
+                        text: 'ini option e'
+                    },
+                ]
+            },
+            {
+                type: 'type soal',
+                text: '',
+                question: 'question 2',
+                options: [
+                    {
+                        option: 'A',
+                        text: 'ini option a'
+                    },
+                    {
+                        option: 'B',
+                        text: 'ini option b'
+                    },
+                    {
+                        option: 'C',
+                        text: 'ini option c'
+                    },
+                    {
+                        option: 'D',
+                        text: 'ini option d'
+                    },
+                    {
+                        option: 'E',
+                        text: 'ini option e'
+                    },
+                ]
+            },
+        ],
         userAnswers: [],
-        keyAnswers: [],
+        keyAnswers: ['A', 'C', 'B'],
         currentNumber: 0
     };
 };
 
-const getters = {};
+const getters = {
+    question(state) {
+        return state.questions[state.currentNumber];
+    },
+    userAnswer(state) {
+        return state.userAnswers[state.currentNumber];
+    },
+    canNext(state) {
+        return state.currentNumber < state.questions.length - 1;
+    },
+    canBack(state) {
+        return state.currentNumber > 0;
+    }
+};
 
-const actions = {};
+const actions = {
+    nextQuestion({ state, getters }) {
+        if (getters.canNext) {
+            state.currentNumber++;
+        }
+    },
+    backQuestion({ state, getters }) {
+        if (getters.canBack) {
+            state.currentNumber--;
+        }
+    },
+    setUserAnswere({ state }, payload) {
+        state.userAnswers[state.currentNumber] = payload;
+    },
+    removeUserAnswere({ state }) {
+        delete (state.userAnswers[state.currentNumber]);
+    }
+};
 
-const mutations = {};
+const mutations = {
+
+};
 
 export default {
     namespaced: true,

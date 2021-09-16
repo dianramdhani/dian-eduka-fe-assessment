@@ -7,13 +7,15 @@
 
   &__header,
   &__footer {
+    height: 3rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     font-size: 1rem;
   }
 
   &__navigator {
+    margin-left: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,6 +43,12 @@
       &:hover {
         background-color: $primary;
         color: $white;
+      }
+
+      &:disabled,
+      &:disabled:hover {
+        background-color: transparent;
+        color: $gray;
       }
     }
   }
