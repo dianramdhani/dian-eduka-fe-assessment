@@ -5,10 +5,10 @@
       <div class="col-lg-9">
         <question />
       </div>
-      <div class="col-md d-grid gap-4">
-        <time-remaining />
-        <question-history />
-        <button class="btn btn-lg btn-primary btn-rounded">Finish</button>
+      <div class="col-md">
+        <time-remaining class="mb-4" />
+        <question-history class="mb-4" />
+        <button class="btn btn-lg btn-primary btn-rounded w-100">Finish</button>
       </div>
     </div>
   </main>

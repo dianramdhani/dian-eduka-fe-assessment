@@ -93,6 +93,9 @@ const actions = {
     },
     removeUserAnswere({ state }) {
         delete (state.userAnswers[state.currentNumber]);
+    },
+    setCurrentNumber({ state }, payload) {
+        state.currentNumber = payload;
     }
 };
 

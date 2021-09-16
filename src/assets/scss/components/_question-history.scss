@@ -48,14 +48,40 @@
       border-color: $primary;
       color: $black;
     }
+
+    button {
+      width: 1.875rem;
+      height: 1.875rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      vertical-align: middle;
+      user-select: none;
+      background-color: transparent;
+      border: 1px solid $primary;
+      border-radius: 50%;
+      transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      color: $black;
+
+      &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: $white;
+        box-shadow: 0px 0px 10px 0px #00000040;
+      }
+    }
   }
 
-  &__number--done span {
+  &__number--done button {
     border-color: $secondary;
     background-color: $secondary;
   }
 
-  &__number--current span {
+  &__number--current button {
     background-color: $primary;
+    border-color: $primary;
+    box-shadow: 0px 0px 10px 0px #e47c40d7;
   }
 }
