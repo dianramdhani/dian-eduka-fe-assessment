@@ -6,13 +6,34 @@
       <div>00 <span>Detik</span></div>
     </div>
     <div class="time-remaining__remainder">
-      Sisa Waktu Tryout <span>03:29:09</span>
+      Sisa Waktu Tryout <span>{{ leftTimeText }}</span>
     </div>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
+
 export default {
   name: 'TimeRemaining',
+  beforeMount() {
+    this.$store.dispatch('time/start');
+  },
+  methods: {
+    twoDigit(number) {
+      return number < 10 ? `0${number}` : `${number}`;
+    },
+  },
+  computed: {
+    ...mapState({ leftTime: (state) => state.time.leftTime }),
+    ...mapGetters({ inProgress: 'time/inProgress' }),
+    leftTimeText() {
+      return this.inProgress
+        ? `${this.twoDigit(this.leftTime.hours)}:${this.twoDigit(
+            this.leftTime.minutes
+          )}:${this.twoDigit(this.leftTime.seconds)}`
+        : '00:00:00';
+    },
+  },
 };
 </script>
