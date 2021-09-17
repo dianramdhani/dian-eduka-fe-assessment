@@ -28,7 +28,7 @@
               }"
             >
               <button @click="setCurrentNumber(index)">{{ index + 1 }}</button
-              >{{ userAnswers[index] }}
+              >{{ userAnswers[index] || '-' }}
             </li>
           </ul>
           <div class="review-modal__footer">
