@@ -28,25 +28,7 @@
       align-items: center;
       font-size: 0.75rem;
       color: $secondary;
-      cursor: pointer;
       margin-bottom: 0.5rem;
-    }
-
-    li:hover span {
-      box-shadow: 0px 0px 10px 0px #00000040;
-    }
-
-    span {
-      display: block;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 1.875rem;
-      height: 1.875rem;
-      border: 1px solid transparent;
-      border-radius: 50%;
-      border-color: $primary;
-      color: $black;
     }
 
     button {
@@ -75,13 +57,23 @@
   }
 
   &__number--done button {
-    border-color: $secondary;
     background-color: $secondary;
+    border-color: $secondary;
   }
 
   &__number--current button {
     background-color: $primary;
     border-color: $primary;
     box-shadow: 0px 0px 10px 0px #e47c40d7;
+  }
+
+  &__number--correct button {
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+
+  &__number--incorrect button {
+    background-color: $primary;
+    border-color: $primary;
   }
 }

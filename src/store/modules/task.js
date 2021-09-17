@@ -56,8 +56,8 @@ const state = () => {
                 ]
             },
         ],
-        userAnswers: [],
-        keyAnswers: ['A', 'C', 'B'],
+        userAnswers: ['B', 'C'],
+        keyAnswers: ['A', 'C'],
         currentNumber: 0
     };
 };
@@ -79,6 +79,15 @@ const getters = {
         return state.userAnswers.filter(
             (answere) => typeof answere !== 'undefined'
         ).length;
+    },
+    correct(state) {
+        let count = 0;
+        state.keyAnswers.forEach((answere, index) => {
+            if (answere === state.userAnswers[index]) {
+                count++
+            }
+        });
+        return count;
     }
 };
 
