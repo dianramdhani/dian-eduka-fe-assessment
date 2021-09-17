@@ -12,6 +12,7 @@
       </div>
     </div>
   </main>
+  <review-modal></review-modal>
 </template>
 
 <script>
@@ -19,6 +20,7 @@ import Navbar from './components/Navbar.vue';
 import Question from './components/Question.vue';
 import QuestionHistory from './components/QuestionHistory.vue';
 import TimeRemaining from './components/TimeRemaining.vue';
+import ReviewModal from './components/ReviewModal.vue';
 
 export default {
   name: 'App',
@@ -27,6 +29,7 @@ export default {
     Question,
     TimeRemaining,
     QuestionHistory,
+    ReviewModal,
   },
 };
 </script>

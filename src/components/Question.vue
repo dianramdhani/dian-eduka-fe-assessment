@@ -3,11 +3,11 @@
     <div class="question__header">
       {{ question.type }}
       <span class="question__navigator">
-        <button>
+        <button :disabled="!canBack" @click="backQuestion">
           <i class="fas fa-chevron-left"></i>
         </button>
         {{ currentNumber + 1 }}
-        <button>
+        <button :disabled="!canNext" @click="nextQuestion">
           <i class="fas fa-chevron-right"></i>
         </button>
       </span>

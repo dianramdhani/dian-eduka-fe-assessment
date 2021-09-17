@@ -16,7 +16,13 @@
         <button @click="setCurrentNumber(index)">{{ index + 1 }}</button>20.5
       </li>
     </ul>
-    <button class="btn btn-primary btn-rounded">Review</button>
+    <button
+      class="btn btn-primary btn-rounded"
+      data-bs-toggle="modal"
+      data-bs-target="#reviewModal"
+    >
+      Review
+    </button>
   </div>
 </template>
 
