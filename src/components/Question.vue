@@ -37,7 +37,6 @@
           'question__option--correct': option.option === keyAnswer,
         }"
         :key="option.option"
-        @click="setUserAnswere(option.option)"
       >
         <span>{{ option.option }}</span
         >{{ option.text }}
