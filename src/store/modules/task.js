@@ -69,6 +69,9 @@ const getters = {
     userAnswer(state) {
         return state.userAnswers[state.currentNumber];
     },
+    keyAnswer(state) {
+        return state.keyAnswers[state.currentNumber];
+    },
     canNext(state) {
         return state.currentNumber < state.questions.length - 1;
     },

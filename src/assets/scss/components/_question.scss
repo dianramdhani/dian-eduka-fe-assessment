@@ -91,7 +91,44 @@
     }
   }
 
+  &__options-review {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 2.25rem;
+
+    li {
+      position: relative;
+      display: block;
+      margin-bottom: 1.375rem;
+
+      span {
+        width: 1.125rem;
+        height: 1.125rem;
+        position: absolute;
+        top: 0;
+        left: -2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $gray;
+        border-radius: 50%;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+          border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+    }
+  }
+
   &__option--active span {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &__option--correct span {
+    background-color: $secondary !important;
+    color: $white;
+  }
+
+  &__option--incorrect span {
     background-color: $primary;
     color: $white;
   }

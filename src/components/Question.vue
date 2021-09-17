@@ -18,7 +18,7 @@
     <p class="question__text">
       {{ question.question }}
     </p>
-    <ul class="question__options">
+    <ul class="question__options" v-show="inProgress">
       <li
         v-for="option in question.options"
         :class="{ 'question__option--active': option.option === userAnswer }"
@@ -29,10 +29,24 @@
         >{{ option.text }}
       </li>
     </ul>
+    <ul class="question__options-review" v-show="!inProgress">
+      <li
+        v-for="option in question.options"
+        :class="{
+          'question__option--incorrect': option.option === userAnswer,
+          'question__option--correct': option.option === keyAnswer,
+        }"
+        :key="option.option"
+        @click="setUserAnswere(option.option)"
+      >
+        <span>{{ option.option }}</span
+        >{{ option.text }}
+      </li>
+    </ul>
     <div class="question__footer">
       <button
         class="btn btn-outline-primary btn-rounded"
-        v-show="userAnswer"
+        v-show="inProgress && userAnswer"
         @click="removeUserAnswere"
       >
         Hapus Jawaban
@@ -59,10 +73,14 @@ export default {
     ...mapGetters({
       question: 'task/question',
       userAnswer: 'task/userAnswer',
+      keyAnswer: 'task/keyAnswer',
       canNext: 'task/canNext',
       canBack: 'task/canBack',
     }),
-    ...mapState({ currentNumber: (state) => state.task.currentNumber }),
+    ...mapState({
+      currentNumber: (state) => state.task.currentNumber,
+      inProgress: (state) => state.time.inProgress,
+    }),
   },
   methods: mapActions({
     setUserAnswere: 'task/setUserAnswere',
