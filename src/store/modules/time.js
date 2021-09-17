@@ -4,34 +4,32 @@ import 'moment-timer';
 
 const duration = 1;
 const endTime = moment().add(duration, 'hours');
+let timer;
 
 const state = () => {
     return {
         leftTime: moment().countdown(),
-        timer: moment.duration()
+        inProgress: false
     };
 };
 
-const getters = {
-    inProgress({ leftTime }) {
-        return leftTime.value > 0;
-    }
-};
+const getters = {};
 
 const actions = {
-    start({ state, getters, dispatch }) {
+    start({ state, dispatch }) {
         state.leftTime = moment().countdown(endTime);
-        state.timer = moment.duration(1000).timer({ loop: true }, () => {
-            if (getters.inProgress) {
+        state.inProgress = true;
+        timer = moment.duration(1000).timer({ loop: true }, () => {
+            if (state.leftTime.value > 0) {
                 state.leftTime = moment().countdown(endTime);
             } else {
                 dispatch('stop');
             }
         });
     },
-
     stop({ state }) {
-        state.timer.stop();
+        timer.stop();
+        state.inProgress = false;
     }
 };
 

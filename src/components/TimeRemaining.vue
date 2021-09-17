@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'TimeRemaining',
@@ -25,8 +25,10 @@ export default {
     },
   },
   computed: {
-    ...mapState({ leftTime: (state) => state.time.leftTime }),
-    ...mapGetters({ inProgress: 'time/inProgress' }),
+    ...mapState({
+      leftTime: (state) => state.time.leftTime,
+      inProgress: (state) => state.time.inProgress,
+    }),
     leftTimeText() {
       return this.inProgress
         ? `${this.twoDigit(this.leftTime.hours)}:${this.twoDigit(
