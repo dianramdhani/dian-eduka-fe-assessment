@@ -31,6 +31,9 @@
             <li><button>1</button>-</li>
             <li><button>1</button>-</li>
           </ul>
+          <div class="review-modal__footer">
+            Question Answered <strong><span>3</span> of 20</strong>
+          </div>
         </div>
       </div>
     </div>
@@ -38,7 +41,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'ReviewModal',
+  computed: mapState({
+    questions: (state) => state.task.questions,
+    userAnswers: (state) => state.task.userAnswers,
+    currentNumber: (state) => state.task.currentNumber,
+  }),
 };
 </script>

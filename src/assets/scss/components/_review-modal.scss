@@ -69,4 +69,19 @@
     border-color: $primary;
     box-shadow: 0px 0px 10px 0px #e47c40d7;
   }
+
+  &__footer {
+    text-align: right;
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    strong {
+      font-size: 1.125rem;
+      margin-left: 0.75rem;
+    }
+
+    span {
+      color: $secondary
+    }
+  }
 }
