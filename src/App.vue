@@ -11,7 +11,7 @@
         <button
           class="btn btn-lg btn-primary btn-rounded w-100"
           v-show="inProgress"
-          @click="stop"
+          @click="finish"
         >
           Finish
         </button>
@@ -22,7 +22,8 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapState, mapMutations, mapActions } from 'vuex';
+import axios from 'axios';
 import Navbar from './components/Navbar.vue';
 import Question from './components/Question.vue';
 import QuestionHistory from './components/QuestionHistory.vue';
@@ -38,9 +39,37 @@ export default {
     QuestionHistory,
     ReviewModal,
   },
+  async mounted() {
+    const questions = await axios
+      .get('/api/questions')
+      .then(({ data }) => data.questions);
+    this.setQuestions(questions);
+    this.$store.dispatch('time/start');
+    this.$watch(
+      () => this.inProgress,
+      () => {
+        if (this.inProgress === false) {
+          this.finish();
+        }
+      }
+    );
+  },
   computed: mapState({ inProgress: (state) => state.time.inProgress }),
   methods: {
-    ...mapActions({ stop: 'time/stop' }),
+    ...mapMutations({
+      setQuestions: 'task/setQuestions',
+      setKeyAnswers: 'task/setKeyAnswers',
+    }),
+    ...mapActions({
+      stop: 'time/stop',
+    }),
+    async finish() {
+      const keyAnswers = await axios
+        .get('/api/key-answers')
+        .then(({ data }) => data.keyAnswers.map(({ key }) => key));
+      this.setKeyAnswers(keyAnswers);
+      this.stop();
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@ import moment from 'moment';
 import 'moment-countdown';
 import 'moment-timer';
 
-const duration = 5;
+const duration = 60;
 const endTime = moment().add(duration, 'seconds');
 let timer;
 
@@ -27,9 +27,10 @@ const actions = {
             }
         });
     },
+
     stop({ state }) {
-        timer.stop();
         state.inProgress = false;
+        timer.stop();
     }
 };
 

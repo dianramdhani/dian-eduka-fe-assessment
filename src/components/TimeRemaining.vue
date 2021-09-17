@@ -16,9 +16,6 @@ import { mapState } from 'vuex';
 
 export default {
   name: 'TimeRemaining',
-  beforeMount() {
-    this.$store.dispatch('time/start');
-  },
   methods: {
     twoDigit(number) {
       return number < 10 ? `0${number}` : `${number}`;

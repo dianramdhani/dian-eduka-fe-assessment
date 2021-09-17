@@ -1,5 +1,5 @@
 <template>
-  <div class="card question mb-4">
+  <div class="card question mb-4" v-if="questions.length">
     <div class="question__header">
       {{ question.type }}
       <span class="question__navigator">
@@ -70,16 +70,25 @@ export default {
   name: 'Question',
   computed: {
     ...mapGetters({
-      question: 'task/question',
-      userAnswer: 'task/userAnswer',
-      keyAnswer: 'task/keyAnswer',
       canNext: 'task/canNext',
       canBack: 'task/canBack',
     }),
     ...mapState({
       currentNumber: (state) => state.task.currentNumber,
       inProgress: (state) => state.time.inProgress,
+      questions: (state) => state.task.questions,
+      userAnswers: (state) => state.task.userAnswers,
+      keyAnswers: (state) => state.task.keyAnswers,
     }),
+    question() {
+      return this.questions[this.currentNumber];
+    },
+    userAnswer() {
+      return this.userAnswers[this.currentNumber];
+    },
+    keyAnswer() {
+      return this.keyAnswers[this.currentNumber];
+    },
   },
   methods: mapActions({
     setUserAnswere: 'task/setUserAnswere',

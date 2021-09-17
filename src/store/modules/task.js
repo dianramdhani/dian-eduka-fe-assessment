@@ -1,77 +1,13 @@
 const state = () => {
     return {
-        questions: [
-            {
-                type: 'type soal',
-                text: 'ini text 1',
-                question: 'question 1',
-                options: [
-                    {
-                        option: 'A',
-                        text: 'ini option a'
-                    },
-                    {
-                        option: 'B',
-                        text: 'ini option b'
-                    },
-                    {
-                        option: 'C',
-                        text: 'ini option c'
-                    },
-                    {
-                        option: 'D',
-                        text: 'ini option d'
-                    },
-                    {
-                        option: 'E',
-                        text: 'ini option e'
-                    },
-                ]
-            },
-            {
-                type: 'type soal',
-                text: '',
-                question: 'question 2',
-                options: [
-                    {
-                        option: 'A',
-                        text: 'ini option a'
-                    },
-                    {
-                        option: 'B',
-                        text: 'ini option b'
-                    },
-                    {
-                        option: 'C',
-                        text: 'ini option c'
-                    },
-                    {
-                        option: 'D',
-                        text: 'ini option d'
-                    },
-                    {
-                        option: 'E',
-                        text: 'ini option e'
-                    },
-                ]
-            },
-        ],
-        userAnswers: ['B', 'C'],
-        keyAnswers: ['A', 'C'],
+        questions: [],
+        userAnswers: [],
+        keyAnswers: [],
         currentNumber: 0
     };
 };
 
 const getters = {
-    question(state) {
-        return state.questions[state.currentNumber];
-    },
-    userAnswer(state) {
-        return state.userAnswers[state.currentNumber];
-    },
-    keyAnswer(state) {
-        return state.keyAnswers[state.currentNumber];
-    },
     canNext(state) {
         return state.currentNumber < state.questions.length - 1;
     },
@@ -117,7 +53,13 @@ const actions = {
 };
 
 const mutations = {
+    setQuestions(state, payload) {
+        state.questions = payload;
+    },
 
+    setKeyAnswers(state, payload) {
+        state.keyAnswers = payload;
+    }
 };
 
 export default {
