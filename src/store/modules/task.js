@@ -74,6 +74,11 @@ const getters = {
     },
     canBack(state) {
         return state.currentNumber > 0;
+    },
+    numberAnswered(state) {
+        return state.userAnswers.filter(
+            (answere) => typeof answere !== 'undefined'
+        ).length;
     }
 };
 

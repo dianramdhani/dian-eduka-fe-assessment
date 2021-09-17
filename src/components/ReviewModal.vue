@@ -19,20 +19,24 @@
         </div>
         <div class="modal-body">
           <ul class="review-modal__numbers">
-            <li class="review-modal__number--done"><button>1</button>E</li>
-            <li class="review-modal__number--done"><button>1</button>E</li>
-            <li class="review-modal__number--done"><button>1</button>-</li>
-            <li class="review-modal__number--current"><button>1</button>-</li>
-            <li><button>1</button>-</li>
-            <li><button>1</button>-</li>
-            <li><button>1</button>-</li>
-            <li><button>1</button>-</li>
-            <li><button>1</button>-</li>
-            <li><button>1</button>-</li>
-            <li><button>1</button>-</li>
+            <li
+              v-for="(question, index) in questions"
+              :key="index"
+              :class="{
+                'review-modal__number--done': userAnswers[index],
+                'review-modal__number--current': index === currentNumber,
+              }"
+            >
+              <button @click="setCurrentNumber(index)">{{ index + 1 }}</button
+              >{{ userAnswers[index] }}
+            </li>
           </ul>
           <div class="review-modal__footer">
-            Question Answered <strong><span>3</span> of 20</strong>
+            Question Answered
+            <strong
+              ><span>{{ numberAnswered }}</span> of
+              {{ questions.length }}</strong
+            >
           </div>
         </div>
       </div>
@@ -41,14 +45,18 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'ReviewModal',
-  computed: mapState({
-    questions: (state) => state.task.questions,
-    userAnswers: (state) => state.task.userAnswers,
-    currentNumber: (state) => state.task.currentNumber,
-  }),
+  computed: {
+    ...mapState({
+      questions: (state) => state.task.questions,
+      userAnswers: (state) => state.task.userAnswers,
+      currentNumber: (state) => state.task.currentNumber,
+    }),
+    ...mapGetters({ numberAnswered: 'task/numberAnswered' }),
+  },
+  methods: mapActions({ setCurrentNumber: 'task/setCurrentNumber' }),
 };
 </script>

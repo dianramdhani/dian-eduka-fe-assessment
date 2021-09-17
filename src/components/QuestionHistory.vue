@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapActions, mapGetters, mapState } from 'vuex';
 
 export default {
   name: 'QuestionHistory',
@@ -37,11 +37,7 @@ export default {
       userAnswers: (state) => state.task.userAnswers,
       currentNumber: (state) => state.task.currentNumber,
     }),
-    numberAnswered() {
-      return this.userAnswers.filter(
-        (answere) => typeof answere !== 'undefined'
-      ).length;
-    },
+    ...mapGetters({ numberAnswered: 'task/numberAnswered' }),
   },
   methods: mapActions({ setCurrentNumber: 'task/setCurrentNumber' }),
 };
