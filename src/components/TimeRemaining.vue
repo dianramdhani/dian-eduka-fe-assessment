@@ -2,8 +2,8 @@
   <div class="card time-remaining">
     <h3 class="time-remaining__title">Sisa Waktu Sesi</h3>
     <div class="time-remaining__time">
-      <div>02 <span>Menit</span></div>
-      <div>00 <span>Detik</span></div>
+      <div>{{ twoDigit(leftTime.minutes) }} <span>Menit</span></div>
+      <div>{{ twoDigit(leftTime.seconds) }} <span>Detik</span></div>
     </div>
     <div class="time-remaining__remainder">
       Sisa Waktu Tryout <span>{{ leftTimeText }}</span>

@@ -2,8 +2,8 @@ import moment from 'moment';
 import 'moment-countdown';
 import 'moment-timer';
 
-const duration = 60;
-const endTime = moment().add(duration, 'seconds');
+const duration = 2;
+const endTime = moment().add(duration, 'minutes');
 let timer;
 
 const state = () => {
